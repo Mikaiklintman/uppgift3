@@ -1,12 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Förstasidan from './Förstasidan';
+import Andrasidan from './Andrasidan';
+
+const stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  
+    <NavigationContainer>
+      <stack.Navigator>
+
+      <stack.Screen name='Hejsan' component={Förstasidan} />
+      <stack.Screen name='Andrasidan' component={Andrasidan} />
+
+
+
+      </stack.Navigator>
+
+
+
+    </NavigationContainer>
+
   );
 }
 
